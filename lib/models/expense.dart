@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:uuid/uuid.dart';
+import 'package:intl/intl.dart';
 
 final formatter = DateFormat.yMd();
 
@@ -22,6 +22,7 @@ class Expense {
     required this.date,
     required this.category,
   }) : id = uuid.v4();
+
   final String id;
   final String title;
   final double amount;
@@ -50,8 +51,8 @@ class ExpenseBucket {
   double get totalExpenses {
     double sum = 0;
 
-    for (final expnese in expenses) {
-      sum += expnese.amount;
+    for (final expense in expenses) {
+      sum += expense.amount; // sum = sum + expense.amount
     }
 
     return sum;
